@@ -3,41 +3,41 @@
     "id": 1,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Đánh giá về thành tựu của công cuộc Đổi mới, Đại hội XIII đã đưa ra lời khẳng định mang tính lịch sử nào về vị thế của đất nước ta?",
-    "options": ["Đất nước ta đã hoàn thành xuất sắc mục tiêu trở thành một siêu cường kinh tế", "Đất nước ta chưa bao giờ có được cơ đồ, tiềm lực, vị thế và uy tín quốc tế như ngày nay", "Đất nước ta đã giải quyết triệt để mọi vấn đề về nghèo đói và bất bình đẳng xã hội", "Đất nước ta đã vượt qua hoàn toàn các nước trong khu vực về thu nhập bình quân"],
-    "correct": 1
+    "question": "Luận điểm: “Đảng ta là một đảng cầm quyền. Mỗi đảng viên và cán bộ phải thực sự thấm nhuần đạo đức cách mạng, thật sự cần kiệm liêm chính, chí công vô tư. Phải giữ gìn Đảng ta thật trong sạch, phải xứng đáng là người lãnh đạo, là người đầy tớ thật trung thành của nhân dân” được Chủ tịch Hồ Chí Minh đưa ra trong tác phẩm nào?",
+    "options": ["Đường cách mệnh", "Đạo đức cách mạng", "Di chúc", "Sửa đổi lối làm việc"],
+    "correct": 2
   },
   {
     "id": 2,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Đại hội XII của Đảng được xác định là đại hội:",
-    "options": ["Dân chủ - Kỷ cương - Hội nhập - Phát triển", "Trí tuệ - Dân chủ - Đoàn kết - Đổi mới", "Đoàn kết - Dân chủ - Kỷ cương - Sáng tạo", "Đoàn kết - Dân chủ - Kỷ cương - Đổi mới"],
-    "correct": 3
+    "question": "Một cán bộ hoàn thành đầy đủ chỉ tiêu công việc của cơ quan nhưng người dân vẫn phải mất nhiều thời gian, chi phí và đi lại nhiều lần để giải quyết thủ tục. Nếu vận dụng tư tưởng Hồ Chí Minh, cách đánh giá nào sâu sắc nhất?",
+    "options": ["Cán bộ đã hoàn thành nhiệm vụ vì chỉ tiêu nội bộ đã đạt", "Người dân phải tự chịu trách nhiệm nếu chưa hiểu thủ tục.", "Cần đánh giá lại chất lượng thực hiện nhiệm vụ từ góc độ kết quả phục vụ nhân dân, chứ không chỉ dựa vào việc cán bộ đã hoàn thành quy trình nội bộ.", "Đây chỉ là vấn đề của cơ sở vật chất, không liên quan đến trách nhiệm cán bộ."],
+    "correct": 2
   },
   {
     "id": 3,
     "type": "speedup",
     "typeName": "⚡ CÂU TĂNG TỐC",
-    "question": "Phát triển kinh tế tư nhân trở thành một động lực quan trọng của nền kinh tế thị trường định hướng XHCN là quan điểm của Đảng ở thời điểm nào?",
-    "options": ["2017", "2018", "2016", "2019"],
-    "correct": 0
+    "question": "Theo tư tưởng Hồ Chí Minh, để 'tẩy sạch' tận gốc hai căn bệnh phá hoại bộ máy là tham ô và lãng phí, trước hết chúng ta phải kiên quyết tiêu diệt căn bệnh gốc rễ nào?",
+    "options": ["Bệnh kiêu ngạo", "Bệnh tư úng, chia rẽ", "Bệnh đặc quyền, đặc lợi", "Bệnh quan liêu"],
+    "correct": 3
   },
   {
     "id": 4,
     "type": "bet",
     "typeName": "🎲 CÂU ĐẶT CƯỢC",
-    "question": "Đại hội XIII của Đảng đã vạch ra tầm nhìn chiến lược phát triển đất nước với các mốc thời gian cụ thể. Mục tiêu phát triển đất nước đến năm 2030 (Kỷ niệm 100 năm thành lập Đảng) được xác định là gì?",
-    "options": ["Là nước đang phát triển, có công nghiệp theo hướng hiện đại, vượt qua mức thu nhập trung bình thấp", "Là nước đang phát triển, có công nghiệp hiện đại, thu nhập trung bình cao", "Cơ bản trở thành nước công nghiệp theo hướng hiện đại, thu nhập trung bình cao", "Là nước phát triển, thu nhập cao"],
-    "correct": 1
+    "question": "Trong quá trình xây dựng nông thôn mới, một chủ tịch xã chủ động đến từng thôn lắng nghe ý kiến đóng góp, điều chỉnh đồ án quy hoạch theo nguyện vọng chính đáng của bà con và công khai minh bạch ngân sách. Hành động này phản ánh đúng phẩm chất nào?",
+    "options": ["Chủ nghĩa hình thức, lãng phí thời gian triển khai các dự án kinh tế.", "Biểu hiện thiếu quyết đoán, phó mặc trách nhiệm lãnh đạo cho nhân dân.", "Tác phong mị dân, cố ý tìm kiếm sự ủng hộ cá nhân từ quần chúng.", "Đạo đức cách mạng của người 'công bộc của dân', tận tụy phục vụ xã hội."],
+    "correct": 3
   },
   {
     "id": 5,
     "type": "steal",
     "typeName": "⚔️ CÂU CƯỚP ĐIỂM",
-    "question": "Đại hội XII chủ trương xây dựng con người trên những khía cạnh nào?",
-    "options": ["Tư tưởng chính trị và đạo đức ,nhân cách, lối sống , trí tuệ và kỹ năng, nền tảng đời sống", "Đạo đức, nhân cách, lối sống, trí tuệ và năng lực việc làm, xây dựng môi trường văn hoá lành mạnh", "Xây dựng con người Việt Nam phát triển toàn diện, lấy nhân tố con người và an ninh con người làm trung tâm của mọi sự phát triển", "Đạo đức, trí tuệ, ý thức dân tộc, trách nhiệm công dân và tinh thần cống hiến"],
-    "correct": 1
+    "question": " Thái độ đối với việc thực hiện chế độ tự phê bình và phê bình của người cán bộ mang tư tưởng 'Công bộc của dân' được Hồ Chí Minh ví như hoạt động nào hằng ngày?",
+    "options": ["Coi tự phê bình và phê bình cầu thị, nghiêm túc như việc 'rửa mặt hàng ngày'.", "Coi phê bình là công cụ để răn đe, trừng phạt và dọa dẫm cấp dưới", "Tránh né sự thật, dị ứng với phê bình và tìm cách trù dập người góp ý", "Chỉ thực hiện đối phó khi có yêu cầu kiểm tra khẩn cấp từ cơ quan cấp trên"],
+    "correct": 0
   },
   {
     "id": 6,
@@ -51,136 +51,136 @@
     "id": 7,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Một trong 6 nhiệm vụ trọng tâm được đề ra tại đại hội XII là: 'Tăng cường xây dựng, chỉnh đốn Đảng; ngăn chặn, đẩy lùi sự suy thoái về tư tưởng......., đạo đức, lối sống, biểu hiện 'tự diễn biến','.......' trong nội bộ. Tập trung xây dựng đội ngũ cán bộ, nhất là đội ngũ cán bộ cấp chiến lược, đủ năng lực, phẩm chất và uy tín, ngang tầm nhiệm vụ.' Hãy điền từ còn thiếu vào chỗ trống.",
-    "options": ["Chính trị, tự biến đổi", "Văn hóa, tự biến đổi", "Chính trị, tự chuyển hóa", "Văn hóa, tự chuyển hóa"],
-    "correct": 2
+    "question": "Trong tác phẩm Sửa đổi lối làm việc (1947), Hồ Chí Minh chỉ ra mối liên hệ trực tiếp giữa bệnh quan liêu và căn bệnh nào sau đây như một cặp bài trùng đe dọa sự sống còn của chế độ?",
+    "options": ["Bệnh hẹp hòi và bệnh cận thị", "Bệnh tham ô và bệnh lãng phí", "Bệnh kiêu ngạo và bệnh hiếu danh", "Bệnh hình thức và bệnh nể nang"],
+    "correct": 1
   },
   {
     "id": 8,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Đại hội XII của Đảng đã tiến hành tổng kết cột mốc lịch sử quan trọng nào của đất nước tính từ năm 1986?",
-    "options": ["20 năm thực hiện công cuộc Đổi mới", "25 năm thực hiện công cuộc Đổi mới", "30 năm thực hiện công cuộc Đổi mới", "35 năm thực hiện công cuộc Đổi mới"],
+    "question": "Theo quan điểm “việc gì có lợi cho dân, ta phải hết sức làm; việc gì hại đến dân, ta phải hết sức tránh”, hành vi nào dưới đây của công chức thể hiện rõ nhất biểu hiện tinh vi của căn bệnh “quan cách mạng” núp bóng “thượng tôn pháp luật”?",
+    "options": ["Cố tình vòi vĩnh và nhận tiền bôi trơn ngoài giờ hành chính để giải quyết hồ sơ đất đai nhanh gọn.", "Sử dụng xe công vụ của cơ quan để phục vụ mục đích hiếu, hỷ cá nhân của gia đình lãnh đạo", "Vận dụng máy móc các quy định chưa rõ ràng để từ chối giải quyết quyền lợi hợp pháp, đẩy rủi ro và khó khăn về phía người dân nhằm bảo toàn an toàn cho bản thân.", "Trực tiếp can thiệp vào quy trình tuyển dụng công chức nhằm đưa người thân trong gia đình vào vị trí có nhiều bổng lộc."],
     "correct": 2
   },
   {
     "id": 9,
     "type": "speedup",
     "typeName": "⚡ CÂU TĂNG TỐC",
-    "question": "Về đối ngoại, cả Đại hội XII và Đại hội XIII đều kiên trì đường lối nhất quán nào để bảo đảm lợi ích tối cao của quốc gia - dân tộc?",
-    "options": ["Chỉ thiết lập quan hệ ngoại giao với các nước trong cùng khu vực địa lý", "Tham gia liên minh quân sự với các nước lớn để bảo vệ chủ quyền", "Đóng cửa nền kinh tế để thực hiện tự cung tự cấp, hạn chế giao lưu", "Độc lập, tự chủ, hòa bình, hợp tác và phát triển; đa phương hóa, đa dạng hóa quan hệ đối ngoại"],
+    "question": "Trong bối cảnh chuyển đổi số và xây dựng Chính phủ điện tử hiện nay, tiêu chuẩn cốt lõi để đánh giá một cơ quan hành chính đã thực sự chuyển dịch từ tư duy “quản lý - cai trị” sang tư duy “công bộc phục vụ” là:",
+    "options": ["Số lượng máy tính hiện đại và hạ tầng phòng máy chủ được mua sắm trang bị cho cơ quan.", "Số lượng văn bản quy phạm pháp luật được cơ quan ban hành trong một năm tài khóa.", "Tỷ lệ số hóa hồ sơ đạt 100% bất kể mức độ sử dụng thực tế của người dân trên địa bàn.", "Mức độ hài lòng của người dân, thời gian thực tế giảm bớt cho xã hội và sự minh bạch trong việc xử lý các phản ánh, khiếu nại."],
     "correct": 3
   },
   {
     "id": 10,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Theo rút kinh nghiệm về mặt chỉ đạo chiến lược tại Đại hội XII, các nhiệm vụ trọng tâm được gắn kết hài hòa như thế nào?",
-    "options": ["Xây dựng Đảng là trung tâm; phát triển kinh tế - xã hội là then chốt", "Phát triển văn hóa là trung tâm; bảo đảm quốc phòng an ninh là then chốt", "Phát triển khoa học công nghệ là trung tâm; xây dựng Đảng là then chốt", "Phát triển kinh tế - xã hội là trung tâm; xây dựng Đảng là then chốt"],
-    "correct": 3
+    "question": "Chủ tịch Hồ Chí Minh đã chỉ rõ câu danh ngôn nào sau đây nhằm nhắc nhở cán bộ nhà nước về trách nhiệm thực thi quyền lợi cho nhân dân?",
+    "options": [" Quyền lợi của Nhà nước luôn đứng trên và tách biệt khỏi quyền lợi của nhân dân lao động.", "Việc gì có lợi cho dân, ta phải hết sức làm. Việc gì hại đến dân, ta phải hết sức tránh.", "Lợi ích của tổ chức là tối thượng, mọi thiệt hại của nhân dân đều có thể bù đắp sau.", "Việc gì có lợi cho cán bộ phải hết sức làm, việc gì hại cho dân phải tránh."],
+    "correct": 1
   },
   {
     "id": 11,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Một trong những nhiệm vụ trọng tâm được Đại hội XII đề ra là:",
-    "options": ["Nâng cao năng lực lãnh đạo và sức chiến đấu của Đảng", "Giảm quy mô hội nhập quốc tế", "Hạn chế phát triển kinh tế tư nhân", "Xóa bỏ kinh tế thị trường"],
-    "correct": 0
+    "question": "Chủ tịch Hồ Chí Minh đã chỉ rõ nguy cơ lớn nhất đối với một Đảng cầm quyền khi cán bộ mắc bệnh 'quan cách mạng' là gì?",
+    "options": ["Làm chậm tiến độ cơ giới hóa và hiện đại hóa sản xuất nông nghiệp", "Gây khó khăn cho việc giao lưu và hợp tác quốc tế của đất nước", " Làm suy giảm tốc độ tăng trưởng chỉ số kinh tế quốc dân", " Làm mất lòng tin của nhân dân và đánh mất mối quan hệ máu thịt với quần chúng."],
+    "correct": 3
   },
   {
     "id": 12,
     "type": "steal",
     "typeName": "⚔️ CÂU CƯỚP ĐIỂM",
-    "question": "Trong nhận định của Đảng tại Đại hội XIII (2021), khi đề cập đến việc quán triệt sâu sắc quan điểm 'dân là gốc', phương châm truyền thống đã được bổ sung và hoàn thiện thành nội dung nào dưới đây?",
-    "options": ["Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát", "Dân biết, dân bàn, dân làm, dân kiểm tra, dân phản biện", "Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân thụ hưởng", "Dân biết, dân bàn, dân làm, dân kiểm tra, dân giám sát, dân phản biện, dân thụ hưởng"],
-    "correct": 2
+    "question": "Dưới góc độ lý luận xây dựng Đảng, căn nguyên nhận thức luận sâu xa dẫn đến việc cán bộ thoái hóa từ 'người công bộc' thành 'quan cách mạng' bắt nguồn từ:",
+    "options": ["Sự nhận thức nhầm lẫn giữa quyền hạn được nhân dân ủy thác với quyền lực thuộc sở hữu cá nhân của người giữ chức vụ.", "Trình độ học vấn và năng lực quản lý nhà nước của đội ngũ cán bộ chưa theo kịp sự phát triển của nền kinh tế.", "Sự bất cập trong việc phân bổ ngân sách và chế độ đãi ngộ tiền lương công chức chưa tương xứng với công sức.", "Ảnh hưởng thuần túy từ văn hóa tiểu nông mà không liên quan đến phương thức kiểm soát quyền lực của bộ máy"],
+    "correct": 0
   },
   {
     "id": 13,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Trong ba đột phá chiến lược được Đại hội XIII xác định, nội dung về “hoàn thiện thể chế” có điểm mới gì quan trọng so với các nhiệm kỳ trước?",
-    "options": ["Nhấn mạnh việc hoàn thiện đồng bộ thể chế phát triển, trước hết là thể chế kinh tế thị trường định hướng xã hội chủ nghĩa", "Ưu tiên xây dựng thể chế đặc quyền dành riêng cho khu vực kinh tế có vốn đầu tư nước ngoài (FDI)", "Quay trở lại mô hình quản lý tập trung bằng mệnh lệnh hành chính để kiểm soát lạm phát nhanh chóng", "Chỉ tập trung sửa đổi các quy định pháp luật về thị trường chứng khoán và bất động sản"],
-    "correct": 0
+    "question": "Theo tư tưởng Hồ Chí Minh, bản chất gốc rễ và nguyên nhân chủ quan hàng đầu làm nảy sinh tư tưởng 'quan cách mạng' cùng các biểu hiện tiêu cực khác trong hoạt động của nhà nước là gì?",
+    "options": ["Trình độ chuyên môn, nghiệp vụ của cán bộ còn nhiều hạn chế", "Chủ nghĩa cá nhân", "Sự thiếu hụt các văn bản pháp luật kiểm soát kinh tế", "Do tác động và âm mưu chống phá từ các thế lực thù địch"],
+    "correct": 1
   },
   {
     "id": 14,
     "type": "speedup",
     "typeName": "⚡ CÂU TĂNG TỐC",
-    "question": "Hãy nối đúng nhất giữa Hội nghị Trung ương với các Nội dung tương ứng:\n1. Hội nghị TW 4\n2. Hội nghị TW 5\n3. Hội nghị TW 6\n4. Hội nghị TW 7\n\na. Phát triển kinh tế tư nhân và hoàn thiện thể chế kinh tế thị trường.\nb. Xây dựng đội ngũ cán bộ các cấp.\nc. Chăm sóc, nâng cao sức khỏe nhân dân và công tác dân số.\nd. Chống \"tự diễn biến\", \"tự chuyển hóa\".",
-    "options": ["1-a, 2-b, 3-c, 4-d", "1-d, 2-a, 3-c, 4-b", "1-d, 2-c, 3-a, 4-b", "1-b, 2-a, 3-d, 4-c"],
+    "question": "Khi bàn về thái độ đối với tiền bạc, công quỹ và tài sản của nhân dân, lời dạy nào của Bác thể hiện rõ nhất phẩm chất 'Liêm, Chính' của người công bộc?",
+    "options": ["Cần phải làm cho dân có ăn, làm cho dân có mặc, làm cho dân có chỗ ở, làm cho dân có học hành.", "Một hạt gạo, một đồng tiền, một giờ công của dân đều là mồ hôi nước mắt, ta phải hết sức tiết kiệm, không được lãng phí, tham ô.", "Phải tăng gia sản xuất thật nhiều, đẩy mạnh phát triển kinh tế hàng hóa nhiều thành phần.", "Cán bộ có quyền thụ hưởng các chế độ đãi ngộ tương xứng với công lao đóng góp cho cách mạng."],
     "correct": 1
   },
   {
     "id": 15,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Từ thực tiễn công cuộc đổi mới, trực tiếp là 5 năm thực hiện Nghị quyết Đại hội XI, Đại hội XII đã rút ra bao nhiêu bài học kinh nghiệm?",
-    "options": ["3", "4", "6", "5"],
-    "correct": 3
+    "question": "Theo tư tưởng Hồ Chí Minh, vì sao yêu cầu cán bộ “vừa có đức, vừa có tài, trong đó đức là gốc” không đồng nghĩa với việc chỉ cần cán bộ có đạo đức là đủ?",
+    "options": ["Vì cán bộ có đạo đức nhưng thiếu năng lực vẫn có thể hoàn thành tốt mọi nhiệm vụ.", "Vì đạo đức giúp cán bộ định hướng việc sử dụng quyền lực, nhưng năng lực quyết định khả năng biến trách nhiệm thành kết quả thực tế.", "Vì năng lực luôn quan trọng hơn đạo đức trong hoạt động quản lý nhà nước.", "Vì cán bộ chỉ cần có chuyên môn, còn đạo đức đã được pháp luật kiểm soát."],
+    "correct": 1
   },
   {
     "id": 16,
     "type": "bet",
     "typeName": "🎲 CÂU ĐẶT CƯỢC",
-    "question": "Quan điểm chỉ đạo của TW tại hội nghị TW 4 khoá XII (10/2016) là:",
-    "options": ["Tuyệt đối không chủ quan, lơ là, mất cảnh giác, nhưng cũng không hoang mang, dao động; luôn bình tĩnh, tự tin, bản lĩnh, chủ động, linh hoạt, sáng tạo trong lãnh đạo, chỉ đạo điều hành, không chuyển trạng thái đột ngột, điều hành 'giật cục'", "Đồng bộ, thống nhất và quyết tâm, quyết liệt trong chỉ đạo, điều hành, vừa tập trung xử lý hiệu quả các nhiệm vụ thường xuyên, các vấn đề tồn đọng kéo dài, vừa kịp thời ứng phó hiệu quả với những vấn đề cấp bách, đồng thời thực hiện các nhiệm vụ, giải pháp mang tính căn cơ trong trung và dài hạn", "Kiên định đường lối đối ngoại độc lập, tự chủ, đa dạng hoá, đa phương hoá quan hệ quốc tế, chủ động tích cực hội nhập kinh tế quốc tế vì lợi ích quốc gia- dân tộc là định hướng chiến lược lớn để xây dựng và bảo vệ Tổ quốc", "Tiếp tục củng cố, giữ vững quốc phòng, an ninh; đẩy mạnh các hoạt động đối ngoại, nâng cao chất lượng, hiệu quả hội nhập quốc tế; đảm bảo môi trường ổn định, hòa bình, hợp tác để thúc đẩy phát triển nhanh, bền vững"],
+    "question": "Một cán bộ không tham ô, không nhận hối lộ và luôn tuân thủ đúng quy định, nhưng thường xuyên gây khó dễ, thiếu tôn trọng và không quan tâm đến những khó khăn chính đáng của người dân. Nhận định nào phù hợp nhất với tư tưởng Hồ Chí Minh?",
+    "options": ["Đã tuân thủ pháp luật thì đương nhiên là “công bộc của dân”.", "Chỉ cần không tham nhũng là đã hoàn thành trách nhiệm với nhân dân.", "Chưa thể coi là thực hiện đầy đủ tinh thần “công bộc của dân”, vì phục vụ nhân dân còn đòi hỏi gần dân, hiểu dân và có trách nhiệm với kết quả phục vụ.", "Đây chỉ là vấn đề về thái độ giao tiếp, không liên quan đến bản chất của người cán bộ."],
     "correct": 2
   },
   {
     "id": 17,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Đại hội XIII xác định nội dung đột phá chiến lược thứ hai về nguồn nhân lực là gì?",
-    "options": ["Phát triển nguồn nhân lực toàn diện; ưu tiên đào tạo công nhân kỹ thuật cho các khu công nghiệp", "Phát triển nguồn nhân lực chất lượng cao; ưu tiên nhân lực cho lãnh đạo, quản lý và các lĩnh vực then chốt", "Phát triển nguồn nhân lực chất lượng cao; ưu tiên nhân lực cho các vùng kinh tế trọng điểm", "Phát triển nguồn nhân lực gắn với khoa học công nghệ; ưu tiên nhân lực cho chuyển đổi số quốc gia"],
-    "correct": 1
+    "question": "Trong mối quan hệ biện chứng giữa tư cách “người lãnh đạo” và “người đầy tớ thật trung thành của nhân dân” theo Di chúc của Chủ tịch Hồ Chí Minh, mệnh đề nào phản ánh đúng nhất bản chất triết học - chính trị của luận điểm này?",
+    "options": ["Tư cách “người lãnh đạo” mang tính quyết định, chi phối và định hình toàn bộ tính chất của tư cách “người đầy tớ”.", "Hai tư cách này đối lập tuyệt đối về mặt công năng quản lý nhà nước nhưng thống nhất ở mục tiêu kinh tế.", "Tư cách “người đầy tớ” là cơ sở đạo đức và bản chất chính trị để hiện thực hóa năng lực và tính chính danh của tư cách “người lãnh đạo”.", "Tư cách “người lãnh đạo” phản ánh thẩm quyền pháp lý, còn tư cách “người đầy tớ” chỉ mang ý nghĩa tu dưỡng cá nhân tự nguyện."],
+    "correct": 2
   },
   {
     "id": 18,
     "type": "speedup",
     "typeName": "⚡ CÂU TĂNG TỐC",
-    "question": "Mục tiêu Đại hội XII đưa ra là gì",
-    "options": ["Đưa nước ta trở thành nước đang phát triển có công nghiệp hiện đại, thu nhập trung bình cao vào năm 2030, tiến tới tầm nhìn trở thành nước phát triển, thu nhập cao vào năm 2045", "Thực hiện nhất quán đường lối đối ngoại độc lập tự chủ, mở rộng hợp tác quốc tế, phấn chuyển từ 'muốn là bạn' sang phương châm 'sẵn sàng là bạn, là đối tác tin cậy' của các quốc gia", "Vượt khó khăn thử thách ổn định và phát triển kinh tế, xã hội, tăng cường ổn định chính trị, đẩy lùi tiêu cực và bất công xã hội, đưa nước ta cơ bản thoát khỏi tình trạng khủng hoảng hiện nay", "Phấn đấu sớm đưa nước ta cơ bản trở thành nước công nghiệp hoá theo hướng hiện đại"],
-    "correct": 3
+    "question": "Tại sao Hồ Chí Minh đặc biệt nhấn mạnh cán bộ phải “dám phụ trách, dám quyết đoán, dám chịu trách nhiệm”?",
+    "options": ["Để cán bộ có thể tự quyết mọi vấn đề mà không cần tuân thủ quy định.", "Để khuyến khích cán bộ sử dụng quyền lực mạnh hơn cấp dưới.", "Vì nếu cán bộ có quyền nhưng không dám quyết định hoặc luôn né tránh trách nhiệm thì quyền lực được giao khó chuyển hóa thành hiệu quả phục vụ nhân dân.", "Vì cán bộ càng quyết đoán thì càng chứng tỏ mình có năng lực."],
+    "correct": 2
   },
   {
     "id": 19,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Đại hội XII xác định nhân dân là:",
-    "options": ["Đối tượng quản lý của Nhà nước", "Chủ thể của công cuộc đổi mới", "Lực lượng lao động đơn thuần", "Đối tượng thụ hưởng chính sách"],
-    "correct": 1
+    "question": "Một địa phương thực hiện chuyển đổi số: người dân có thể nộp hồ sơ trực tuyến nhưng vẫn phải khai lại những thông tin cơ quan nhà nước đã có, sau đó nhiều lần đến trực tiếp để bổ sung giấy tờ. Điều này cho thấy điều gì?",
+    "options": ["Chuyển đổi số chắc chắn chưa thể thực hiện trong quản lý nhà nước.", "Chỉ cần đưa thủ tục lên mạng là đã hoàn thành cải cách hành chính.", "Cải cách chỉ thực sự có ý nghĩa khi công nghệ làm giảm thời gian, chi phí và sự phiền hà cho người dân.", "Người dân cần chủ động thích nghi với mọi thủ tục mà cơ quan nhà nước đưa ra."],
+    "correct": 2
   },
   {
     "id": 20,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "So với chủ đề Đại hội XII, chủ đề Đại hội XIII bổ sung thêm nội dung nào sau đây?",
-    "options": ["Khơi dậy khát vọng phát triển đất nước, phát huy ý chí", "Bảo vệ vững chắc Tổ quốc, giữ vững môi trường hòa bình, ổn định", "Đẩy mạnh toàn diện, đồng bộ công cuộc đổi mới", "Xây dựng Đảng và hệ thống chính trị trong sạch, vững mạnh"],
-    "correct": 0
+    "question": "Một người đứng đầu lựa chọn một cán bộ vào vị trí quan trọng chủ yếu vì người đó là người thân, dù năng lực chưa đáp ứng yêu cầu. Hành vi này nguy hiểm nhất ở điểm nào?",
+    "options": ["Làm giảm tính cạnh tranh giữa các cán bộ.", "Làm mất cơ hội của một số cá nhân khác.", "Biến quyền lực trong công tác cán bộ thành công cụ phục vụ quan hệ cá nhân, từ đó làm suy yếu nguyên tắc khách quan và dễ dẫn đến tha hóa quyền lực.", "Chỉ gây ảnh hưởng đến nội bộ cơ quan, không liên quan đến người dân."],
+    "correct": 2
   },
   {
     "id": 21,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Theo Quy định về trách nhiệm nêu gương được thông qua tại Hội nghị TW 8 khóa XII, những đối tượng nào được yêu cầu phải thực hiện nêu gương trước tiên và cao nhất?",
-    "options": ["Toàn thể đảng viên trong cả nước", "Cán bộ lãnh đạo cấp xã, phường và thị trấn", "Cán bộ, công chức làm việc trong các cơ quan nhà nước", "Ủy viên Bộ Chính trị, Ủy viên Ban Bí thư, Ủy viên Ban Chấp hành Trung ương"],
-    "correct": 3
+    "question": "Tại một cuộc họp tiếp xúc cử tri, người dân phản ánh quyết định thu hồi đất của huyện có dấu hiệu chưa thỏa đáng về đơn giá bồi thường. Vị lãnh đạo phụ trách trả lời: “Huyện làm đúng quy trình, văn bản đã ký là phải thi hành, người dân nếu không đồng ý thì cứ đi mà kiện lên cấp trên, không được ý kiến ở đây”. Phát ngôn này phản ánh sai lầm căn bản nào?",
+    "options": ["Nhầm lẫn giữa quyền giải thích pháp luật với thẩm quyền ban hành quyết định hành chính.", "Thiếu kinh nghiệm ứng khẩu trước đám đông và chưa nắm vững quy chế phát ngôn của cơ quan.", "Tư duy quyền uy áp đặt của 'quan cách mạng', đoạn tuyệt đối thoại, thể hiện thái độ đứng trên nhân dân thay vì lắng nghe và giải trình.", "Vi phạm trình tự tố tụng hành chính trong việc tiếp nhận đơn thư khiếu nại trực tiếp."],
+    "correct": 2
   },
   {
     "id": 22,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Điền từ: Đại hội XIII đặt mục tiêu tổng quát là nâng cao năng lực lãnh đạo, năng lực cầm quyền và sức chiến đấu của Đảng; xây dựng Đảng và hệ thống chính trị trong sạch, vững mạnh toàn diện; củng cố, tăng cường ______ của nhân dân đối với Đảng, Nhà nước, chế độ XHCN.",
-    "options": ["niềm tin", "sức mạnh", "khát vọng", "lòng tin"],
-    "correct": 0
+    "question": "Vì sao Hồ Chí Minh coi quan liêu là một vấn đề đặc biệt nguy hiểm đối với việc xây dựng đội ngũ cán bộ?",
+    "options": ["Vì quan liêu chủ yếu làm giảm tốc độ xử lý văn bản hành chính", "Vì quan liêu làm cán bộ xa rời thực tế và nhân dân, từ đó tạo điều kiện cho tham ô, lãng phí và các biểu hiện tha hóa quyền lực phát sinh.", "Vì quan liêu chỉ xuất hiện ở những cơ quan có nhiều thủ tục.", "Vì quan liêu luôn đồng nghĩa với tham nhũng."],
+    "correct": 1
   },
   {
     "id": 23,
     "type": "speedup",
     "typeName": "⚡ CÂU TĂNG TỐC",
-    "question": "Sắp xếp đúng thứ tự 3 đột phá chiến lược được Đại hội XII xác định:",
-    "options": ["Phát triển nguồn nhân lực, nhất là nguồn nhân lực chất lượng cao; Hoàn thiện thể chế kinh tế thị trường định hướng XHCN; Xây dựng hệ thống kết cấu hạ tầng đồng bộ", "Hoàn thiện thể chế kinh tế thị trường định hướng XHCN; Xây dựng hệ thống kết cấu hạ tầng đồng bộ; Phát triển nguồn nhân lực, nhất là nguồn nhân lực chất lượng cao", "Hoàn thiện thể chế kinh tế thị trường định hướng XHCN; Phát triển nguồn nhân lực, nhất là nguồn nhân lực chất lượng cao; Xây dựng hệ thống kết cấu hạ tầng đồng bộ", "Xây dựng hệ thống kết cấu hạ tầng đồng bộ; Phát triển nguồn nhân lực, nhất là nguồn nhân lực chất lượng cao; Hoàn thiện thể chế kinh tế thị trường định hướng XHCN"],
+    "question": "Trong bảng tiêu chí so sánh giữa 'Quan cách mạng' và 'Công bộc của dân', thói 'quan cách mạng' có nhận thức lệch lạc như thế nào về nguồn gốc và bản chất của quyền lực được giao?",
+    "options": ["Xem quyền lực là sự ủy thác tạm thời của nhân dân để phụng sự xã hội", "Xem quyền lực là công cụ thuộc về tập thể cơ quan hành chính nhà nước", " Xem quyền lực là tài sản cá nhân hoặc đặc quyền do mình chiếm giữ để cai trị", ""],
     "correct": 2
   },
   {

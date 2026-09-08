@@ -5,7 +5,7 @@ let teams = [
     { id: 2, name: "Nhóm 2", score: 10 },
     { id: 3, name: "Nhóm 3", score: 10 },
     { id: 4, name: "Nhóm 4", score: 10 },
-    { id: 5, name: "Nhóm 5", score: 10 }
+    { id: 5, name: "Nhóm 6", score: 10 }
 ];
 
 let currentTeamIndex = 0; // Nhóm 1 xuất phát trước (index = 0)
