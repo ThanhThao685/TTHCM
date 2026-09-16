@@ -187,16 +187,56 @@
     "id": 24,
     "type": "normal",
     "typeName": "CÂU HỎI THƯỜNG",
-    "question": "Đại hội XIII xác định có bao nhiêu nhiệm vụ trọng tâm cần tập trung lãnh đạo, chỉ đạo thực hiện trong nhiệm kỳ?",
-    "options": ["4", "5", "6", "7"],
+    "question": "Theo tư tưởng Hồ Chí Minh, mối quan hệ giữa “đức” và “tài” của người cán bộ được hiểu như thế nào?",
+    "options": ["Có tài là yếu tố quyết định, còn đạo đức chỉ mang tính bổ trợ.", "Có đức là đủ, không nhất thiết phải có năng lực chuyên môn", "Đức là nền tảng định hướng việc sử dụng tài, còn tài giúp biến trách nhiệm phục vụ nhân dân thành hiệu quả thực tế.", "Đức và tài hoàn toàn độc lập, không ảnh hưởng đến nhau."],
     "correct": 2
   },
   {
     "id": 25,
     "type": "mine",
     "typeName": "💣 CÂU DÍNH MÌN",
-    "question": "Một trong những nhiệm vụ chủ yếu trên lĩnh vực kinh tế được Đại hội XII đề ra để phát triển đất nước nhanh và bền vững là gì?",
-    "options": ["Đổi mới mô hình tăng trưởng, cơ cấu lại nền kinh tế, đẩy mạnh công nghiệp hoá, hiện đại hoá đất nước", "Xây dựng nền kinh tế độc lập, tự chủ cao, đồng thời chủ động và tích cực hội nhập kinh tế quốc tế sâu rộng", "Phát triển kinh tế tư nhân trở thành một động lực quan trọng nhất để bứt phá nền kinh tế", "Tập trung phát triển kinh tế tri thức và kinh tế số để theo kịp xu hướng của Cách mạng công nghiệp lần thứ tư"],
-    "correct": 0
+    "question": "Điểm khác biệt căn bản giữa “quan cách mạng” và “công bộc của dân” theo tư tưởng Hồ Chí Minh là gì?",
+    "options": ["Khác nhau chủ yếu ở chức vụ và quyền hạn được giao.", "Khác nhau ở cách nhìn nhận và sử dụng quyền lực: một bên coi quyền lực như đặc quyền, một bên coi quyền lực là trách nhiệm phục vụ nhân dân.", "“Quan cách mạng” không có năng lực, còn “công bộc của dân” luôn có năng lực cao", " “Quan cách mạng” làm việc trong cơ quan nhà nước, còn “công bộc của dân” làm việc ngoài cơ quan nhà nước."],
+    "correct": 1
+  },
+  { 
+    "id": 26,
+    "type": "normal",
+    "typeName": "CÂU HỎI THƯỜNG",
+    "question": "Theo tư tưởng Hồ Chí Minh, để ngăn ngừa sự tha hóa quyền lực và hạn chế biểu hiện “quan cách mạng”, cần đặc biệt chú trọng điều gì?",
+    "options": ["Tăng quyền hạn cho cán bộ để nâng cao hiệu quả quản lý", "Chỉ chú trọng giáo dục đạo đức cho cán bộ", "Kết hợp tu dưỡng đạo đức với kiểm soát quyền lực, kiểm tra, giám sát và trách nhiệm giải trình.", "Hạn chế cán bộ tiếp xúc trực tiếp với nhân dân để tránh phát sinh sai phạm."],
+    "correct": 2
+  },
+  {
+    "id": 27,
+    "type": "speedup",
+    "typeName": "⚡ CÂU TĂNG TỐC",
+    "question": "Theo tư tưởng Hồ Chí Minh, việc “dám phụ trách, dám quyết đoán, dám chịu trách nhiệm” của cán bộ cần đi đôi với yêu cầu nào?",
+    "options": ["Có quyền tự quyết mà không cần kiểm tra, giám sát", "Thực hiện quyền lực trong khuôn khổ pháp luật và vì lợi ích chung", " Ưu tiên bảo vệ quyết định của cá nhân", "Hạn chế chịu trách nhiệm khi xảy ra sai sót"],
+    "correct": 1
+  },
+  {
+    "id": 28,
+    "type": "normal",
+    "typeName":"CÂU HỎI THƯỜNG",
+    "question": "Theo tư tưởng Hồ Chí Minh, vì sao cần chống tư túng, chia rẽ và đưa người thân, bạn bè không đủ năng lực vào vị trí công tác?",
+    "options":["Vì dễ làm giảm sự đoàn kết trong nội bộ gia đình.","Vì làm mất tính khách quan trong công tác cán bộ, ảnh hưởng đến chất lượng bộ máy và tiềm ẩn nguy cơ tha hóa quyền lực.","Vì cán bộ không được phép duy trì quan hệ cá nhân với người thân, bạn bè.","Vì người thân, bạn bè thường không phù hợp với công việc trong cơ quan nhà nước."],
+    "correct": 1
+  },
+  {
+    "id": 29,
+    "type": "bet",
+    "typeName":"🎲 CÂU ĐẶT CƯỢC",
+    "question": "Một cán bộ luôn tự nhận mình là “công bộc của dân” nhưng trong thực tế thường xuyên để hồ sơ của người dân quá hạn, hướng dẫn không đầy đủ và không chịu trách nhiệm khi phát sinh sai sót. Theo tư tưởng Hồ Chí Minh, điều này cho thấy điều gì?",
+    "options":["Cán bộ vẫn là “công bộc của dân” nếu không vi phạm pháp luật.","Chỉ cần cán bộ có đạo đức tốt thì những hạn chế trong giải quyết công việc không đáng kể.","Tư cách “công bộc của dân” phải được chứng minh bằng kết quả phục vụ và trách nhiệm thực tế, không chỉ bằng lời nói hay chức danh.","Trách nhiệm giải quyết hồ sơ chủ yếu thuộc về bộ phận hành chính, không phải cá nhân cán bộ."],
+    "correct": 2
+  },
+  {
+    "id": 30,
+    "type": "normal",
+    "typeName":"CÂU HỎI THƯỜNG",
+    "question": "Theo tư tưởng Hồ Chí Minh, vì sao việc cán bộ thường xuyên lắng nghe phản ánh của nhân dân có ý nghĩa trong việc hạn chế bệnh quan liêu?",
+    "options":["Vì giúp cán bộ tăng quyền quyết định đối với các vấn đề của địa phương.","Vì giúp cán bộ chỉ tập trung giải quyết những yêu cầu được nhiều người ủng hộ.","Vì giúp cán bộ nắm được thực tiễn, nhu cầu và khó khăn của nhân dân thay vì chỉ dựa vào báo cáo hành chính.","Vì giúp giảm trách nhiệm của cán bộ trong quá trình thực hiện công vụ."],
+    "correct": 2
   }
 ]

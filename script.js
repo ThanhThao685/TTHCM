@@ -78,11 +78,11 @@ function renderScoreboard() {
     document.getElementById("current-team-display").innerText = teams[currentTeamIndex].name;
 }
 
-// 3. TẠO 25 Ô CHỮ TRÊN BÀN CỜ LẬT
+// 3. TẠO 30 Ô CHỮ TRÊN BÀN CỜ LẬT
 function generateGridBoard() {
     const board = document.getElementById("grid-board");
     board.innerHTML = "";
-    for (let i = 1; i <= 25; i++) {
+    for (let i = 1; i <= 30; i++) {
         const cell = document.createElement("div");
         cell.className = "grid-cell";
         cell.id = `cell-${i}`;
@@ -96,7 +96,7 @@ function generateGridBoard() {
 function handleCellClick(cellNumber) {
     currentSelectedCell = cellNumber;
     
-    // Lấy câu hỏi tương ứng trong mảng dữ liệu (vòng lặp tuần hoàn nếu mảng ít hơn 25)
+    // Lấy câu hỏi tương ứng trong mảng dữ liệu (vòng lặp tuần hoàn nếu mảng ít hơn 30)
     currentQuestion = questionsData[(cellNumber - 1) % questionsData.length];
     
     // Reset cấu hình trạng thái câu hỏi mới
@@ -636,10 +636,10 @@ function submitSecretGuess(isCorrect) {
     closeModal("secret-guess-modal");
 }
 
-// 13. KIỂM TRA ĐIỀU KIỆN HẾT TOÀN BỘ 25 Ô ĐỂ HIỆN BXH CHUNG CUỘC
+// 13. KIỂM TRA ĐIỀU KIỆN HẾT TOÀN BỘ 30 Ô ĐỂ HIỆN BXH CHUNG CUỘC
 function checkGameEnd() {
     const totalOpened = document.querySelectorAll(".grid-cell.opened").length;
-    if (totalOpened === 25) {
+    if (totalOpened === 30) {
         setTimeout(() => {
             showPodium();
         }, 1200);
