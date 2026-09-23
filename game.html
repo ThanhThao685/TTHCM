@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trò Chơi: Lật Ô - Tư tưởng Hồ Chí Minh</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="game-container">
+        <div class="sidebar">
+            <div class="logo-area">
+                <div class="flag-icon">☭</div>
+                <h2>LẬT Ô</h2>
+                <p class="subtitle">Môn: Tư tưởng Hồ Chí Minh</p>
+            </div>
+
+            <div class="turn-indicator">
+                LƯỢT ĐỘI HIỆN TẠI: <span id="current-team-display">Nhóm 1</span>
+            </div>
+
+            <div class="scoreboard" id="scoreboard">
+                </div>
+
+            <div class="secret-image-btn-area">
+                <button class="btn btn-primary btn-block" id="secret-guess-btn" onclick="openSecretGuessModal()">
+                    ĐOÁN TỪ KHÓA BÍ ẨN (+50Đ)
+                </button>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="board-wrapper">
+                <div class="secret-image-underlay">
+                    <!--Link bức ảnh bí mật-->
+                    <img src="tranhbian.png" id="secret-img" alt="Bức ảnh bí mật">
+                </div>
+                <div class="grid-board" id="grid-board">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="power-modal">
+        <div class="modal-content text-center animate-pop">
+            <h1 id="power-title" class="text-gold">QUYỀN ĐẶC BIỆT</h1>
+            <div id="power-icon" style="font-size: 5rem; margin: 20px 0;">🎁</div>
+            <p id="power-desc" class="power-description"></p>
+            
+            <div id="bet-input-area" class="hidden">
+                <label for="bet-amount" style="display:block; margin-bottom:10px; font-weight:bold;">Chọn số điểm muốn đặt cược (bội của 10):</label>
+                <select id="bet-amount" class="form-control">
+                </select>
+            </div>
+
+            <div id="steal-input-area" class="hidden">
+                <label for="steal-target-team" style="display:block; margin-bottom:10px; font-weight:bold;">Chọn đội để cướp điểm (Phải có >=10đ):</label>
+                <select id="steal-target-team" class="form-control">
+                    </select>
+            </div>
+
+            <button class="btn btn-gold btn-large" style="margin-top: 30px;" onclick="closePowerAndOpenQuestion()">BẮT ĐẦU CÂU HỎI</button>
+        </div>
+    </div>
+
+    <div class="modal" id="question-modal">
+        <div class="modal-content animate-pop">
+            <div class="question-header">
+                <span class="question-badge" id="question-badge-type">CÂU HỎI THƯỜNG</span>
+                <div class="timer-box" id="main-timer">30</div>
+            </div>
+            
+            <div class="question-body">
+                <h2 id="question-text">Nội dung câu hỏi lịch sử đang được tải...</h2>
+            </div>
+
+            <div class="options-grid" id="options-grid">
+                </div>
+
+            <div id="action-after-answer" class="text-center hidden" style="margin-top: 20px;">
+                <h2 id="result-status-text" style="font-weight: bold; font-size: 1.8rem;"></h2>
+                <button class="btn btn-success" id="btn-next-turn" onclick="finishQuestionTurn()">HOÀN THÀNH LƯỢT CHƠI</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="rebound-modal">
+        <div class="modal-content animate-pop">
+            <div class="question-header">
+                <span class="question-badge badge-danger">CƯỚP QUYỀN TRẢ LỜI</span>
+                <div class="timer-box bg-danger" id="rebound-timer">10</div>
+            </div>
+            
+            <div class="text-center" style="margin-bottom: 15px;">
+                <p style="font-size: 1.1rem; color: #ccc;">Câu hỏi hiện tại: <strong id="rebound-q-text" style="color:#fff;"></strong></p>
+                <p style="color: #ffdd67; font-weight: bold;">Chọn đội giơ tay nhanh nhất để trao quyền trả lời:</p>
+            </div>
+
+            <div class="team-rebound-grid" id="rebound-teams-pool">
+                </div>
+
+            <div class="options-grid hidden" id="rebound-options-grid" style="margin-top: 25px; border-top: 1px solid #444; padding-top: 20px;">
+                </div>
+            
+            <div class="text-center hidden" id="rebound-result-area" style="margin-top: 20px;">
+                <h3 id="rebound-status-text"></h3>
+                <button class="btn btn-success" onclick="finishQuestionTurn()">ĐÓNG VÀ HOÀN THÀNH LƯỢT</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="secret-guess-modal">
+        <div class="modal-content animate-pop text-center" style="max-width: 500px;">
+            <h2 class="text-gold">ĐOÁN TỪ KHÓA BÍ ẨN</h2>
+            <p style="margin: 15px 0; color: #ddd;">Cơ hội đoán từ khóa sau khi hoàn thành một vòng 5 câu. Chọn nhóm đưa ra câu trả lời:</p>
+            
+            <select id="guess-team-select" class="form-control" style="margin-bottom: 20px;">
+                <option value="1">Nhóm 1</option>
+                <option value="2">Nhóm 2</option>
+                <option value="3">Nhóm 3</option>
+                <option value="4">Nhóm 5</option>
+                <option value="5">Nhóm 6</option>
+            </select>
+
+            <div style="margin-bottom: 25px; text-align: left;">
+                <label style="font-weight: bold; color: #ffdd67;">Kết quả đoán của nhóm:</label>
+                <div style="margin-top: 10px;">
+                    <button class="btn btn-success" style="width: 48%; float: left;" onclick="submitSecretGuess(true)">ĐÚNG (+50đ)</button>
+                    <button class="btn btn-danger" style="width: 48%; float: right;" onclick="submitSecretGuess(false)">SAI (0đ)</button>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+
+            <button class="btn btn-secondary btn-block" onclick="closeModal('secret-guess-modal')">HỦY BỎ</button>
+        </div>
+    </div>
+
+    <div id="podium-modal" class="modal">
+        <div class="modal-content text-center animate-pop" style="max-width: 600px; background: linear-gradient(135deg, #1f1c2c, #928dab);">
+            <h1 class="text-gold" style="font-size: 3rem; margin-bottom: 5px;">🏆 BẢNG XẾP HẠNG 🏆</h1>
+            <p style="color: #fff; margin-bottom: 25px;">Chúc mừng các nhóm đã hoàn thành xuất sắc chặng đường lịch sử!</p>
+            
+            <div id="podium-list" style="margin-bottom: 30px;">
+                </div>
+
+            <button class="btn btn-gold btn-large" onclick="location.reload()">CHƠI LẠI TRÒ CHƠI</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

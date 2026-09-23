@@ -3,152 +3,406 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trò Chơi: Lật Ô - Tư tưởng Hồ Chí Minh</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Giới Thiệu Trò Chơi - Lật Ô</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0d0202;
+            background-image: radial-gradient(circle at 50% 50%, #4a0000 0%, #0d0202 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .intro-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+            background: rgba(20, 2, 2, 0.8);
+            border-radius: 15px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .header-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: #ffdd67;
+            text-shadow: 0 0 15px rgba(255, 221, 103, 0.6);
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: #ffdd67;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #ddd;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: #1a0b0b;
+            border-radius: 10px;
+            border: 1px solid #552222;
+            border-left: 5px solid #d4af37;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: #ffdd67;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .content-section p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+            color: #eee;
+            line-height: 1.8;
+        }
+
+        .rules-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .rules-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #eee;
+            font-size: 1.05rem;
+        }
+
+        .rules-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ffdd67;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px rgba(255, 221, 103, 0.5);
+        }
+
+        .cell-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .cell-card {
+            padding: 25px;
+            background: linear-gradient(135deg, #a91d1d, #630505);
+            border-radius: 10px;
+            border: 1px solid #d4af37;
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1), 0 5px 15px rgba(0, 0, 0, 0.6);
+            transition: all 0.3s ease;
+        }
+
+        .cell-card:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #c92a2a, #820c0c);
+            border-color: #ffdd67;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .cell-card-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .cell-card h3 {
+            color: #ffdd67;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .cell-card p {
+            color: #eee;
+            font-size: 0.95rem;
+        }
+
+        .cell-card .score-info {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(212, 175, 55, 0.4);
+            color: #ffdd67;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .btn-start {
+            background: linear-gradient(135deg, #ffdd67, #d4af37);
+            color: #000;
+            min-width: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-start:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(135deg, #fff0aa, #ffdd67);
+        }
+
+        .btn-back {
+            background: rgba(45, 19, 19, 0.8);
+            color: #ffdd67;
+            border: 2px solid #d4af37;
+        }
+
+        .btn-back:hover {
+            background: #471d1d;
+            color: #fff;
+            border-color: #ffdd67;
+        }
+
+        .highlight {
+            color: #ffdd67;
+            font-weight: 800;
+        }
+
+        .team-section {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #ffdd67;
+            border-right: 1px solid #552222;
+            border-top: 1px solid #552222;
+            border-bottom: 1px solid #552222;
+        }
+
+        .team-section h3 {
+            color: #ffdd67;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .cell-types {
+                grid-template-columns: 1fr;
+            }
+
+            .button-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="game-container">
-        <div class="sidebar">
-            <div class="logo-area">
-                <div class="flag-icon">☭</div>
-                <h2>LẬT Ô</h2>
-                <p class="subtitle">Môn: Tư tưởng Hồ Chí Minh</p>
-            </div>
+    <div class="intro-container">
+        <div class="header">
+            <div class="header-icon">☭ 🇻🇳</div>
+            <h1>LẬT Ô</h1>
+            <p>Trò chơi đoàn kết - Thử thách kiến thức Tư tưởng Hồ Chí Minh của nhóm 4</p>
+        </div>
 
-            <div class="turn-indicator">
-                LƯỢT ĐỘI HIỆN TẠI: <span id="current-team-display">Nhóm 1</span>
-            </div>
+        <div class="content-section">
+            <h2>🎮 Giới Thiệu Trò Chơi</h2>
+            <p>
+                <span class="highlight">Lật Ô</span> là một trò chơi đoàn thể kịch tính, khuyến khích sự tham gia tích cực và học hỏi kiến thức Tư tưởng Hồ Chí Minh. Cụ thể sẽ là kiến thức về <b>Tư tưởng Hồ Chí Minh về trách nhiệm phục vụ nhân dân của cán bộ</b>.
+            </p>
+            <p>
+                <span class="highlight">Mục đích:</span> Câu hỏi về môn Tư tưởng Hồ Chí Minh sẽ được ẩn dưới 30 ô số trên bàn cờ. Mỗi vòng có 5 câu hỏi, các nhóm lần lượt trả lời 1 câu. Sau mỗi vòng, các nhóm có cơ hội đoán từ khóa của hình ảnh bí mật.
+            </p>
+        </div>
 
-            <div class="scoreboard" id="scoreboard">
+        <div class="content-section">
+            <h2>👥 Cấu Thành Trò Chơi</h2>
+            <ul class="rules-list">
+                <li><span class="highlight">Số lượng đội:</span> 5 nhóm (Nhóm 1, Nhóm 2, Nhóm 3, Nhóm 5 và Nhóm 6)</li>
+                <li><span class="highlight">Điểm khởi đầu:</span> Mỗi nhóm bắt đầu với 10 điểm</li>
+                <li><span class="highlight">Tổng số ô:</span> 30 ô lựa chọn được sắp xếp theo số thứ tự</li>
+                <li><span class="highlight">Thời gian trả lời:</span> 30 giây cho đội chính, 5 giây cho đội cướp quyền</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>⚖️ Luật Chơi Cơ Bản</h2>
+            <ul class="rules-list">
+                <li>Các nhóm <span class="highlight">lần lượt</span> chọn ô (theo thứ tự: Nhóm 1 → 2 → 3 → 5 → 6 → 1 ...)</li>
+                <li>Khi chọn ô, đội sẽ thấy <span class="highlight">loại quyền đặc biệt</span> ẩn trong ô đó</li>
+                <li>Đội chính sẽ trả lời câu hỏi trong <span class="highlight">30 giây</span></li>
+                <li>Trả lời <span class="highlight">đúng</span> → Cộng điểm (tùy theo loại ô) và ô sẽ được mở</li>
+                <li>Trả lời <span class="highlight">sai</span> → Các đội khác có cơ hội cướp quyền trả lời (chỉ với ô thường, ô tăng tốc)</li>
+                <li>Mỗi vòng gồm <span class="highlight">5 câu hỏi</span>, tương ứng 5 nhóm lần lượt trả lời 1 câu</li>
+                <li>Sau mỗi vòng, các nhóm có cơ hội <span class="highlight">đoán từ khóa hình ảnh bí mật</span></li>
+                <li>Đoán đúng được <span class="highlight">+50 điểm</span>, kết thúc phần chơi ngay; sau khi cộng điểm, nhóm có tổng điểm cao nhất chiến thắng</li>
+                <li>Đoán sai thì không kết thúc game và tiếp tục sang vòng tiếp theo</li>
+                <li>Nếu hoàn thành đủ <span class="highlight">30 câu</span> mà chưa có đáp án đúng, nhóm có tổng điểm cao nhất chiến thắng</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>🎪 Các Loại Ô Chơi</h2>
+            <div class="cell-types">
+                <div class="cell-card">
+                    <div class="cell-card-icon">📝</div>
+                    <h3>Ô Thường</h3>
+                    <p>Ô cơ bản với câu hỏi lịch sử đơn giản. Đội chính trả lời đúng nhận điểm, sai thì các đội khác được cướp.</p>
+                    <div class="score-info">
+                        ✓ Đúng: +10đ<br>
+                        ✗ Sai: 0đ (nhưng cho cướp)<br>
+                        💰 Cướp đúng: +10đ
+                    </div>
                 </div>
 
-            <div class="secret-image-btn-area">
-                <button class="btn btn-primary btn-block" id="secret-guess-btn" onclick="openSecretGuessModal()">
-                    ĐOÁN TỪ KHÓA BÍ ẨN (+50Đ)
-                </button>
+                <div class="cell-card">
+                    <div class="cell-card-icon">⚡</div>
+                    <h3>Ô Tăng Tốc</h3>
+                    <p>Cơ hội bứt phá! Câu hỏi phát triển cao hơn. Trả lời đúng nhận 20 điểm thay vì 10!</p>
+                    <div class="score-info">
+                        ✓ Đúng: +20đ<br>
+                        ✗ Sai: 0đ (nhưng cho cướp)<br>
+                        💰 Cướp đúng: +10đ
+                    </div>
+                </div>
+
+                <div class="cell-card">
+                    <div class="cell-card-icon">🎲</div>
+                    <h3>Ô Đặt Cược</h3>
+                    <p>Rủi ro cao, thưởng lớn! Chọn số điểm cược (min 10, max điểm hiện tại, bội của 10).</p>
+                    <div class="score-info">
+                        ✓ Đúng: +X điểm<br>
+                        ✗ Sai: -X điểm<br>
+                        ⚠️ Điểm &lt; 10: Tự động bỏ qua
+                    </div>
+                </div>
+
+                <div class="cell-card">
+                    <div class="cell-card-icon">⚔️</div>
+                    <h3>Ô Cướp Điểm</h3>
+                    <p>Cơ hội đặc biệt! Trả lời đúng vừa cộng 10đ vừa cướp 10đ từ đối thủ (tổng +20đ).</p>
+                    <div class="score-info">
+                        ✓ Đúng: +20đ (10 + 10 cướp)<br>
+                        ✗ Sai: -10đ<br>
+                        🎯 Không cho cướp quyền
+                    </div>
+                </div>
+
+                <div class="cell-card">
+                    <div class="cell-card-icon">🎁</div>
+                    <h3>Ô May Mắn</h3>
+                    <p>Quà tặng ngẫu nhiên từ hệ thống! Nhận 15 điểm miễn phí mà không cần trả lời câu hỏi.</p>
+                    <div class="score-info">
+                        🎉 Nhận: +15đ<br>
+                        ⭐ Không cần trả lời<br>
+                        🔄 Chuyển sang đội tiếp theo
+                    </div>
+                </div>
+
+                <div class="cell-card">
+                    <div class="cell-card-icon">💣</div>
+                    <h3>Ô Dính Mìn</h3>
+                    <p>Câu hỏi khó! Trả lời đúng thoát chết (0đ), sai bị trừ 10 điểm. Không cho cướp.</p>
+                    <div class="score-info">
+                        ✓ Đúng: 0đ (thoát chết)<br>
+                        ✗ Sai: -10đ<br>
+                        🎯 Không cho cướp quyền
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="main-content">
-            <div class="board-wrapper">
-                <div class="secret-image-underlay">
-                    <!--Link bức ảnh bí mật-->
-                    <img src="tranhbian.png" id="secret-img" alt="Bức ảnh bí mật">
-                </div>
-                <div class="grid-board" id="grid-board">
-                </div>
+        <div class="content-section">
+            <h2>⚔️ Cơ Chế Cướp Quyền</h2>
+            <p>
+                Khi <span class="highlight">đội chính trả lời sai</span> ở ô <span class="highlight">Thường</span> hoặc <span class="highlight">Tăng Tốc</span>, các đội còn lại có cơ hội "giơ tay" cướp:
+            </p>
+            <ul class="rules-list">
+                <li>Quản trò sẽ có <span class="highlight">10 giây</span> để các đội giơ tay lựa chọn</li>
+                <li>Đội giơ tay nhanh nhất được chọn để trả lời</li>
+                <li>Cướp <span class="highlight">đúng</span>: +10 điểm → Game tiếp tục sang đội tiếp theo</li>
+                <li>Cướp <span class="highlight">sai</span>: -10 điểm → Cho đội khác cướp tiếp (đến khi hết các đội)</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>✨ Chế Độ Đặc Biệt</h2>
+            <div class="team-section">
+                <h3>Đoán Từ Khóa Bí Ẩn 🖼️</h3>
+                <p>
+                    Mỗi lúc mở một ô, một bức tranh bí ẩn từng chút sẽ lộ dần. Sau mỗi vòng gồm 5 câu hỏi, MC sẽ hỏi các nhóm có muốn đoán từ khóa hay không.
+                    <span class="highlight">Đoán đúng: +50 điểm và kết thúc phần chơi ngay.</span> Sau khi cộng 50 điểm, nhóm có tổng điểm cao nhất là nhóm chiến thắng. Nếu đoán sai, game tiếp tục sang vòng tiếp theo.
+                </p>
             </div>
+        </div>
+
+        <div class="content-section">
+            <h2>🏆 Kết Thúc Trò Chơi</h2>
+            <ul class="rules-list">
+                <li>Nếu không có nhóm đoán đúng, khi tất cả <span class="highlight">30 ô</span> đã được mở, trò chơi kết thúc</li>
+                <li>Các nhóm được <span class="highlight">sắp xếp lại</span> dựa trên tổng điểm cuối cùng (từ cao đến thấp)</li>
+                <li>Hiển thị <span class="highlight">bảng xếp hạng vinh danh:</span> 🥇 QUÁN QUÂN, 🥈 Á QUÂN, 🥉 GIẢI BA</li>
+            </ul>
+        </div>
+
+        <div class="button-group">
+            <a href="game.html" class="btn btn-start">
+                BẮT ĐẦU CHƠI NGAY
+            </a>
         </div>
     </div>
 
-    <div class="modal" id="power-modal">
-        <div class="modal-content text-center animate-pop">
-            <h1 id="power-title" class="text-gold">QUYỀN ĐẶC BIỆT</h1>
-            <div id="power-icon" style="font-size: 5rem; margin: 20px 0;">🎁</div>
-            <p id="power-desc" class="power-description"></p>
-            
-            <div id="bet-input-area" class="hidden">
-                <label for="bet-amount" style="display:block; margin-bottom:10px; font-weight:bold;">Chọn số điểm muốn đặt cược (bội của 10):</label>
-                <select id="bet-amount" class="form-control">
-                </select>
-            </div>
-
-            <div id="steal-input-area" class="hidden">
-                <label for="steal-target-team" style="display:block; margin-bottom:10px; font-weight:bold;">Chọn đội để cướp điểm (Phải có >=10đ):</label>
-                <select id="steal-target-team" class="form-control">
-                    </select>
-            </div>
-
-            <button class="btn btn-gold btn-large" style="margin-top: 30px;" onclick="closePowerAndOpenQuestion()">BẮT ĐẦU CÂU HỎI</button>
-        </div>
-    </div>
-
-    <div class="modal" id="question-modal">
-        <div class="modal-content animate-pop">
-            <div class="question-header">
-                <span class="question-badge" id="question-badge-type">CÂU HỎI THƯỜNG</span>
-                <div class="timer-box" id="main-timer">30</div>
-            </div>
-            
-            <div class="question-body">
-                <h2 id="question-text">Nội dung câu hỏi lịch sử đang được tải...</h2>
-            </div>
-
-            <div class="options-grid" id="options-grid">
-                </div>
-
-            <div id="action-after-answer" class="text-center hidden" style="margin-top: 20px;">
-                <h2 id="result-status-text" style="font-weight: bold; font-size: 1.8rem;"></h2>
-                <button class="btn btn-success" id="btn-next-turn" onclick="finishQuestionTurn()">HOÀN THÀNH LƯỢT CHƠI</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="rebound-modal">
-        <div class="modal-content animate-pop">
-            <div class="question-header">
-                <span class="question-badge badge-danger">CƯỚP QUYỀN TRẢ LỜI</span>
-                <div class="timer-box bg-danger" id="rebound-timer">10</div>
-            </div>
-            
-            <div class="text-center" style="margin-bottom: 15px;">
-                <p style="font-size: 1.1rem; color: #ccc;">Câu hỏi hiện tại: <strong id="rebound-q-text" style="color:#fff;"></strong></p>
-                <p style="color: #ffdd67; font-weight: bold;">Chọn đội giơ tay nhanh nhất để trao quyền trả lời:</p>
-            </div>
-
-            <div class="team-rebound-grid" id="rebound-teams-pool">
-                </div>
-
-            <div class="options-grid hidden" id="rebound-options-grid" style="margin-top: 25px; border-top: 1px solid #444; padding-top: 20px;">
-                </div>
-            
-            <div class="text-center hidden" id="rebound-result-area" style="margin-top: 20px;">
-                <h3 id="rebound-status-text"></h3>
-                <button class="btn btn-success" onclick="finishQuestionTurn()">ĐÓNG VÀ HOÀN THÀNH LƯỢT</button>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="secret-guess-modal">
-        <div class="modal-content animate-pop text-center" style="max-width: 500px;">
-            <h2 class="text-gold">ĐOÁN TỪ KHÓA BÍ ẨN</h2>
-            <p style="margin: 15px 0; color: #ddd;">Cơ hội đoán từ khóa sau khi hoàn thành một vòng 5 câu. Chọn nhóm đưa ra câu trả lời:</p>
-            
-            <select id="guess-team-select" class="form-control" style="margin-bottom: 20px;">
-                <option value="1">Nhóm 1</option>
-                <option value="2">Nhóm 2</option>
-                <option value="3">Nhóm 3</option>
-                <option value="4">Nhóm 5</option>
-                <option value="5">Nhóm 6</option>
-            </select>
-
-            <div style="margin-bottom: 25px; text-align: left;">
-                <label style="font-weight: bold; color: #ffdd67;">Kết quả đoán của nhóm:</label>
-                <div style="margin-top: 10px;">
-                    <button class="btn btn-success" style="width: 48%; float: left;" onclick="submitSecretGuess(true)">ĐÚNG (+50đ)</button>
-                    <button class="btn btn-danger" style="width: 48%; float: right;" onclick="submitSecretGuess(false)">SAI (0đ)</button>
-                    <div style="clear:both;"></div>
-                </div>
-            </div>
-
-            <button class="btn btn-secondary btn-block" onclick="closeModal('secret-guess-modal')">HỦY BỎ</button>
-        </div>
-    </div>
-
-    <div id="podium-modal" class="modal">
-        <div class="modal-content text-center animate-pop" style="max-width: 600px; background: linear-gradient(135deg, #1f1c2c, #928dab);">
-            <h1 class="text-gold" style="font-size: 3rem; margin-bottom: 5px;">🏆 BẢNG XẾP HẠNG 🏆</h1>
-            <p style="color: #fff; margin-bottom: 25px;">Chúc mừng các nhóm đã hoàn thành xuất sắc chặng đường lịch sử!</p>
-            
-            <div id="podium-list" style="margin-bottom: 30px;">
-                </div>
-
-            <button class="btn btn-gold btn-large" onclick="location.reload()">CHƠI LẠI TRÒ CHƠI</button>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
