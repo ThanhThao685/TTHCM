@@ -4,19 +4,21 @@ let teams = [
     { id: 1, name: "Nhóm 1", score: 10 },
     { id: 2, name: "Nhóm 2", score: 10 },
     { id: 3, name: "Nhóm 3", score: 10 },
-    { id: 4, name: "Nhóm 4", score: 10 },
+    { id: 4, name: "Nhóm 5", score: 10 },
     { id: 5, name: "Nhóm 6", score: 10 }
 ];
 
 let currentTeamIndex = 0; // Nhóm 1 xuất phát trước (index = 0)
 let currentSelectedCell = null;
 let currentQuestion = null;
+let gameEnded = false;
+let secretGuessPromptedRound = 0;
 
 // Biến quản lý bộ đếm thời gian
 let mainTimerInterval = null;
 let reboundTimerInterval = null;
-let mainTimeLeft = 15;
-let reboundTimeLeft = 10;
+let mainTimeLeft = 30;
+let reboundTimeLeft = 30;
 let currentReboundTeamIndex = 0; // Index của nhóm cướp hiện tại
 let reboundTeamAnswerTimes = [5, 4, 3, 3]; // Thời gian trả lời cho từng nhóm cướp
 
@@ -49,7 +51,7 @@ function renderScoreboard() {
     const scoreboardDiv = document.getElementById("scoreboard");
     scoreboardDiv.innerHTML = "";
     
-    // Sắp xếp bản sao để xem thứ hạng nhưng vẫn giữ nguyên thứ tự hiển thị cố định từ Nhóm 1 - Nhóm 5
+    // Sắp xếp bản sao để xem thứ hạng nhưng vẫn giữ nguyên thứ tự hiển thị cố định của 5 đội
     const sortedTeams = [...teams].sort((a,b) => b.score - a.score);
 
     teams.forEach(team => {
@@ -96,8 +98,12 @@ function generateGridBoard() {
 function handleCellClick(cellNumber) {
     currentSelectedCell = cellNumber;
     
-    // Lấy câu hỏi tương ứng trong mảng dữ liệu (vòng lặp tuần hoàn nếu mảng ít hơn 30)
-    currentQuestion = questionsData[(cellNumber - 1) % questionsData.length];
+    // Lấy đúng câu hỏi theo ID để các câu 26-30 không bị lặp hoặc lệch dữ liệu.
+    currentQuestion = questionsData.find(question => question.id === cellNumber);
+    if (!currentQuestion) {
+        console.error(`Không tìm thấy câu hỏi có ID ${cellNumber}.`);
+        return;
+    }
     
     // Reset cấu hình trạng thái câu hỏi mới
     hasAnswered = false;
@@ -238,8 +244,7 @@ function closePowerAndOpenQuestion() {
         document.getElementById(`cell-${currentSelectedCell}`).classList.add("opened");
         
         // Chuyển lượt luôn sang nhóm tiếp theo
-        nextTeamTurn();
-        checkGameEnd();
+        completeQuestionTurn();
         return;
     }
 
@@ -249,8 +254,7 @@ function closePowerAndOpenQuestion() {
         document.getElementById(`cell-${currentSelectedCell}`).classList.add("opened");
         
         // Chuyển lượt sang nhóm tiếp theo
-        nextTeamTurn();
-        checkGameEnd();
+        completeQuestionTurn();
         return;
     }
 
@@ -258,7 +262,7 @@ function closePowerAndOpenQuestion() {
     openQuestionModal();
 }
 
-// 7. HIỂN THỊ CHI TIẾT CÂU HỎI VÀ KÍCH HOẠT ĐẾM NGƯỢC 17 GIÂY
+// 7. HIỂN THỊ CHI TIẾT CÂU HỎI VÀ KÍCH HOẠT ĐẾM NGƯỢC 30 GIÂY
 function openQuestionModal() {
     const modal = document.getElementById("question-modal");
     document.getElementById("question-badge-type").innerText = currentQuestion.typeName;
@@ -279,32 +283,47 @@ function openQuestionModal() {
 
     modal.classList.add("active");
 
-    // Khởi động đồng hồ đếm ngược 15 giây của đội chính
-    mainTimeLeft = 15;
-    document.getElementById("main-timer").innerText = mainTimeLeft;
-    document.getElementById("main-timer").classList.remove("bg-danger");
-    
-    clearInterval(mainTimerInterval);
+    // Câu hỏi vừa hiển thị là thời điểm bắt đầu lượt 30 giây.
+    stopMainTimer();
+    mainTimeLeft = 30;
+    const timerElement = document.getElementById("main-timer");
+    timerElement.innerText = mainTimeLeft;
+    timerElement.classList.remove("bg-danger");
+
     mainTimerInterval = setInterval(() => {
         mainTimeLeft--;
-        document.getElementById("main-timer").innerText = mainTimeLeft;
+        timerElement.innerText = mainTimeLeft;
         
         if (mainTimeLeft <= 5) {
-            document.getElementById("main-timer").classList.add("bg-danger");
+            timerElement.classList.add("bg-danger");
         }
 
         if (mainTimeLeft <= 0) {
-            clearInterval(mainTimerInterval);
-            handleMainTeamTimeout(); // Xử lý khi hết 15 giây
+            stopMainTimer(false);
+            handleMainTeamTimeout();
         }
     }, 1000);
+}
+
+function stopMainTimer(reset = true) {
+    clearInterval(mainTimerInterval);
+    mainTimerInterval = null;
+
+    if (reset) {
+        mainTimeLeft = 30;
+        const timerElement = document.getElementById("main-timer");
+        if (timerElement) {
+            timerElement.innerText = mainTimeLeft;
+            timerElement.classList.remove("bg-danger");
+        }
+    }
 }
 
 // 8. XỬ LÝ KHI ĐỘI CHÍNH BẤM CHỌN ĐÁP ÁN
 function handleMainTeamAnswer(selectedIndex) {
     if (hasAnswered) return; // Khóa không cho bấm lại liên tục
     hasAnswered = true;
-    clearInterval(mainTimerInterval);
+    stopMainTimer(false);
 
     const isCorrect = selectedIndex === currentQuestion.correct;
     const optionsButtons = document.getElementById("options-grid").getElementsByClassName("option-btn");
@@ -383,6 +402,7 @@ function handleMainTeamAnswer(selectedIndex) {
 
 // 9. XỬ LÝ KHI ĐỘI CHÍNH HẾT GIỜ (TÍNH NHƯ TRẢ LỜI SAI)
 function handleMainTeamTimeout() {
+    stopMainTimer(false);
     hasAnswered = true;
     const currentTeam = teams[currentTeamIndex];
     const statusText = document.getElementById("result-status-text");
@@ -391,6 +411,9 @@ function handleMainTeamTimeout() {
     // CHỈ highlight đáp án đúng cho câu đặt cược / cướp điểm
     // Với câu thường, tăng tốc, và dính mìn, KHÔNG hiển thị đáp án để các đội cướp còn bí
     const optionsButtons = document.getElementById("options-grid").getElementsByClassName("option-btn");
+    for (const button of optionsButtons) {
+        button.disabled = true;
+    }
     if (currentQuestion.type !== "normal" && currentQuestion.type !== "speedup" && currentQuestion.type !== "mine") {
         optionsButtons[currentQuestion.correct].classList.add("correct-choice");
     }
@@ -423,6 +446,7 @@ function handleMainTeamTimeout() {
 
 // 10. MỞ CỬA SỔ CƯỚP QUYỀN KHI ĐỘI CHÍNH THẤT BẠI
 function openReboundModal() {
+    stopMainTimer();
     closeModal("question-modal");
     const modal = document.getElementById("rebound-modal");
     document.getElementById("rebound-q-text").innerText = currentQuestion.question;
@@ -435,13 +459,11 @@ function openReboundModal() {
     refreshReboundTeamsPool();
     modal.classList.add("active");
 
-    // Đã XÓA bộ đếm ngược 10 giây ở đây
     clearInterval(reboundTimerInterval);
-    
-    // Ẩn hoặc đổi text đồng hồ cướp quyền (nếu có element này)
     const timerEl = document.getElementById("rebound-timer");
     if(timerEl) {
-        timerEl.innerText = "∞"; // Hiển thị vô cực vì không giới hạn thời gian nữa
+        timerEl.innerText = reboundTimeLeft;
+        timerEl.classList.remove("bg-danger");
     }
 }
 
@@ -502,7 +524,21 @@ function selectTeamToRebound(teamId) {
     optionsGrid.innerHTML = "";
     optionsGrid.classList.remove("hidden");
 
-    // Đã XÓA bộ đếm ngược 5-3 giây trả lời ở đây
+    reboundTimeLeft = 30;
+    const timerElement = document.getElementById("rebound-timer");
+    timerElement.innerText = reboundTimeLeft;
+    timerElement.classList.remove("bg-danger");
+    clearInterval(reboundTimerInterval);
+    reboundTimerInterval = setInterval(() => {
+        reboundTimeLeft--;
+        timerElement.innerText = reboundTimeLeft;
+        if (reboundTimeLeft <= 5) timerElement.classList.add("bg-danger");
+        if (reboundTimeLeft <= 0) {
+            clearInterval(reboundTimerInterval);
+            reboundTimerInterval = null;
+            submitReboundAnswer(teamId, -1);
+        }
+    }, 1000);
     
     // Hiện lại 4 đáp án để quản trò bấm lựa chọn theo câu trả lời của nhóm cướp đó
     currentQuestion.options.forEach((optionText, index) => {
@@ -518,7 +554,6 @@ function selectTeamToRebound(teamId) {
 function submitReboundAnswer(teamId, selectedIndex) {
     clearInterval(reboundTimerInterval); 
     
-    // Đã bỏ -1 (timeout) vì thời gian không còn bị giới hạn
     const isCorrect = selectedIndex === currentQuestion.correct; 
     const targetTeam = teams.find(t => t.id === teamId);
     
@@ -527,7 +562,7 @@ function submitReboundAnswer(teamId, selectedIndex) {
     // CHỈ hiển thị đáp án đúng nếu trả lời sai
     if (isCorrect) {
         optionsButtons[currentQuestion.correct].classList.add("correct-choice");
-    } else {
+    } else if (selectedIndex >= 0 && optionsButtons[selectedIndex]) {
         optionsButtons[selectedIndex].classList.add("wrong-choice");
     }
 
@@ -592,6 +627,10 @@ function submitReboundAnswer(teamId, selectedIndex) {
 
 // 11. DỌN DẸP KHÉP LẠI LƯỢT CHƠI ĐỂ LỘ TRANH NỀN
 function finishQuestionTurn() {
+    stopMainTimer();
+    clearInterval(reboundTimerInterval);
+    reboundTimerInterval = null;
+
     // Đóng tất cả modal câu hỏi liên quan
     closeModal("question-modal");
     closeModal("rebound-modal");
@@ -605,18 +644,40 @@ function finishQuestionTurn() {
     }
 
     // Chuyển quyền chọn ô tuần hoàn sang nhóm tiếp theo
-    nextTeamTurn();
-    checkGameEnd();
+    completeQuestionTurn();
 }
 
-// CHUYỂN INDEX LƯỢT ĐỘI CHƠI (HẾT NHÓM 5 QUAY LẠI NHÓM 1)
+// CHUYỂN INDEX LƯỢT ĐỘI CHƠI (HẾT 5 ĐỘI QUAY LẠI NHÓM 1)
 function nextTeamTurn() {
     currentTeamIndex = (currentTeamIndex + 1) % teams.length;
     renderScoreboard();
 }
 
-// 12. TÍNH NĂNG ĐOÁN BỨC TRANH CHÍNH (+30 ĐIỂM) TỪ SIDEBAR TƯƠNG TÁC BẤM
+// Hoàn thành câu hỏi và chỉ mở cơ hội đoán ảnh sau mỗi vòng đủ 5 câu.
+function completeQuestionTurn() {
+    if (gameEnded) return;
+
+    nextTeamTurn();
+    const totalOpened = document.querySelectorAll(".grid-cell.opened").length;
+
+    if (totalOpened > 0 && totalOpened % teams.length === 0) {
+        setTimeout(() => openSecretGuessModal(), 300);
+    } else {
+        checkGameEnd();
+    }
+}
+
+// 12. TÍNH NĂNG ĐOÁN BỨC TRANH CHÍNH (+50 ĐIỂM) SAU MỖI VÒNG
 function openSecretGuessModal() {
+    if (gameEnded) return;
+
+    const totalOpened = document.querySelectorAll(".grid-cell.opened").length;
+    const completedRound = Math.floor(totalOpened / teams.length);
+    if (totalOpened < teams.length || totalOpened % teams.length !== 0 || secretGuessPromptedRound >= completedRound) {
+        return;
+    }
+
+    secretGuessPromptedRound = completedRound;
     const modal = document.getElementById("secret-guess-modal");
     modal.classList.add("active");
 }
@@ -624,26 +685,38 @@ function openSecretGuessModal() {
 function submitSecretGuess(isCorrect) {
     const selectedTeamId = parseInt(document.getElementById("guess-team-select").value);
     const luckyTeam = teams.find(t => t.id === selectedTeamId);
+    if (!luckyTeam || gameEnded) return;
 
     if (isCorrect) {
-        luckyTeam.score += 30;
-        alert(`Chúc mừng! ${luckyTeam.name} đã giải mã chính xác bức tranh bí ẩn và nhận được +30 điểm vinh dự!`);
+        luckyTeam.score += 50;
+        renderScoreboard();
+        alert(`Chúc mừng! ${luckyTeam.name} đã giải mã chính xác bức tranh bí ẩn và nhận được +50 điểm! Trò chơi kết thúc.`);
+        closeModal("secret-guess-modal");
+        endGame();
+        return;
     } else {
         alert(`${luckyTeam.name} đã đoán sai nội dung bức tranh bí ẩn. Cơ hội đoán vẫn dành cho các đội khác ở các lượt sau.`);
     }
 
     renderScoreboard();
     closeModal("secret-guess-modal");
+    checkGameEnd();
 }
 
 // 13. KIỂM TRA ĐIỀU KIỆN HẾT TOÀN BỘ 30 Ô ĐỂ HIỆN BXH CHUNG CUỘC
 function checkGameEnd() {
     const totalOpened = document.querySelectorAll(".grid-cell.opened").length;
-    if (totalOpened === 30) {
-        setTimeout(() => {
-            showPodium();
-        }, 1200);
-    }
+    if (totalOpened >= 30) endGame();
+}
+
+function endGame() {
+    if (gameEnded) return;
+    stopMainTimer();
+    clearInterval(reboundTimerInterval);
+    reboundTimerInterval = null;
+    gameEnded = true;
+    closeModal("secret-guess-modal");
+    setTimeout(() => showPodium(), 1200);
 }
 
 // HIỂN THỊ CỬA SỔ VINH DANH BANNER XẾP HẠNG
@@ -676,5 +749,8 @@ function showPodium() {
 
 // CÁC HÀM TRỢ GIÚP ĐÓNG MỞ CỬA SỔ LỚP PHỦ CSS
 function closeModal(modalId) {
+    if (modalId === "question-modal") {
+        stopMainTimer();
+    }
     document.getElementById(modalId).classList.remove("active");
 }

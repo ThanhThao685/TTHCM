@@ -227,16 +227,16 @@
     "id": 29,
     "type": "bet",
     "typeName":"🎲 CÂU ĐẶT CƯỢC",
-    "question": "Một cán bộ luôn tự nhận mình là “công bộc của dân” nhưng trong thực tế thường xuyên để hồ sơ của người dân quá hạn, hướng dẫn không đầy đủ và không chịu trách nhiệm khi phát sinh sai sót. Theo tư tưởng Hồ Chí Minh, điều này cho thấy điều gì?",
-    "options":["Cán bộ vẫn là “công bộc của dân” nếu không vi phạm pháp luật.","Chỉ cần cán bộ có đạo đức tốt thì những hạn chế trong giải quyết công việc không đáng kể.","Tư cách “công bộc của dân” phải được chứng minh bằng kết quả phục vụ và trách nhiệm thực tế, không chỉ bằng lời nói hay chức danh.","Trách nhiệm giải quyết hồ sơ chủ yếu thuộc về bộ phận hành chính, không phải cá nhân cán bộ."],
-    "correct": 2
+    "question": "Theo tư tưởng Hồ Chí Minh, trong các biểu hiện tiêu cực phát sinh từ thói 'quan cách mạng' trong hoạt động của bộ máy nhà nước, những căn bệnh nào được Người định danh là 'bạn đồng minh của thực dân và phong kiến'?",
+    "options":["Đặc quyền, đặc lợi.","Tham ô, lãng phí, quan liêu","Tư túng, chia rẽ, kiêu ngạo","Cả ba phương án trên"],
+    "correct": 1
   },
   {
     "id": 30,
     "type": "normal",
     "typeName":"CÂU HỎI THƯỜNG",
-    "question": "Theo tư tưởng Hồ Chí Minh, vì sao việc cán bộ thường xuyên lắng nghe phản ánh của nhân dân có ý nghĩa trong việc hạn chế bệnh quan liêu?",
-    "options":["Vì giúp cán bộ tăng quyền quyết định đối với các vấn đề của địa phương.","Vì giúp cán bộ chỉ tập trung giải quyết những yêu cầu được nhiều người ủng hộ.","Vì giúp cán bộ nắm được thực tiễn, nhu cầu và khó khăn của nhân dân thay vì chỉ dựa vào báo cáo hành chính.","Vì giúp giảm trách nhiệm của cán bộ trong quá trình thực hiện công vụ."],
-    "correct": 2
+    "question": " Khi phê phán nghiêm khắc tư tưởng 'quan cách mạng' ở những cán bộ thoái hóa, biến chất, Chủ tịch Hồ Chí Minh đã khẳng ",
+    "options":["Đảng là cơ quan nắm giữ quyền lực tuyệt đối để điều hành và quản lý mọi mặt đời sống xã hội.","Đảng không phải là một tổ chức để làm quan phát tài, mà phải làm tròn nhiệm vụ giải phóng dân tộc, làm cho Tổ quốc giàu mạnh, đồng bào sung sướng.","Đảng là nơi tập hợp những người hiền tài để áp đặt mệnh lệnh hành chính lên quần chúng nhân dân.","Đảng là một thiết chế hành chính độc lập đại diện cho quyền lợi riêng của đội ngũ cán bộ công chức"],
+    "correct": 1
   }
 ]
